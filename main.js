@@ -44,7 +44,8 @@ function openModalOnClick(e) {
     }
     modal.classList.add('is-open');
   const urlOriginalImage = e.target.dataset.source;
-    modalImg.src = urlOriginalImage;
+  modalImg.src = urlOriginalImage;
+  modalImg.alt = urlOriginalImage;
  
     window.addEventListener('keydown', closeModalOnEsk);
     window.addEventListener('keydown', onOverleyClick);
@@ -55,6 +56,7 @@ function openModalOnClick(e) {
 function closeModalOnClick() {
     modal.classList.remove('is-open');
     modalImg.src = '';
+    modalImg.alt = '';
     
     window.removeEventListener('keydown', closeModalOnEsk);
     window.removeEventListener('keydown',onOverleyClick);
