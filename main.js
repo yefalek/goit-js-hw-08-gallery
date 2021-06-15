@@ -35,7 +35,10 @@ function createMarkupGalleryItems(images) {
     }
 
 
-
+    function clear (src,alt) {
+      modalImg.src = src;
+        modalImg.alt = alt;
+    }
 function openModalOnClick(e) {
     e.preventDefault()
 
@@ -44,8 +47,9 @@ function openModalOnClick(e) {
     }
     modal.classList.add('is-open');
   const urlOriginalImage = e.target.dataset.source;
-  modalImg.src = urlOriginalImage;
-  modalImg.alt = urlOriginalImage;
+  // modalImg.src = urlOriginalImage;
+  // modalImg.alt = urlOriginalImage;
+  clear(urlOriginalImage,urlOriginalImage);
  
     window.addEventListener('keydown', closeModalOnEsk);
     window.addEventListener('keydown', onOverleyClick);
@@ -55,8 +59,9 @@ function openModalOnClick(e) {
 
 function closeModalOnClick() {
     modal.classList.remove('is-open');
-    modalImg.src = '';
-    modalImg.alt = '';
+    // modalImg.src = '';
+    // modalImg.alt = '';
+  clear('','');
     
     window.removeEventListener('keydown', closeModalOnEsk);
     window.removeEventListener('keydown',onOverleyClick);
